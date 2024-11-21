@@ -1,5 +1,6 @@
 'use strict';
 // Reset button needs adjusting 
+// Clear the guesses for each game
 
 /*------------------------------------------------------->
 
@@ -107,10 +108,11 @@ listen('keydown', playerInput, (ev) => {
     if (playerNum !== undefined) {
       countGuess();
       compareNum(playerNum);
+      playerInput.value = ''; 
     }
   }
-	playerInput.value = '';
 });
+
 
 listen('click', restartBtn, () => {
   resetGame();
